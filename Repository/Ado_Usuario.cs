@@ -42,7 +42,7 @@ namespace HOLACODERCLASE14APIS.Repository
                 return listaUsuario;
             }
         }
-        public static Usuario TraerUsuario(string nombreUsuario)
+        public static Usuario TraerUsuario(int idUsu)
         {
             Usuario usuario = new Usuario();
 
@@ -52,12 +52,12 @@ namespace HOLACODERCLASE14APIS.Repository
                 conecction.Open();
 
                 SqlCommand cmd = conecction.CreateCommand();
-                cmd.CommandText = "SELECT * FROM Usuario where NombreUsuario = @nombre";
+                cmd.CommandText = "SELECT * FROM Usuario where Id = @idUsu";
 
-                var paramNombre = new SqlParameter("nombre", System.Data.SqlDbType.VarChar);
-                paramNombre.Value = nombreUsuario;
+                var paramIdUsu = new SqlParameter("idUsu", System.Data.SqlDbType.BigInt);
+                paramIdUsu.Value = idUsu;
 
-                cmd.Parameters.Add(paramNombre);
+                cmd.Parameters.Add(paramIdUsu);
 
                 var reader = cmd.ExecuteReader();
                 while (reader.Read())

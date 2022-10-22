@@ -17,9 +17,9 @@ namespace HOLACODERCLASE14APIS.Controllers
         }
         
         [HttpGet("GetUsuarios")]
-        public Usuario Get([FromBody] string nombreUsuario)
+        public Usuario Traer(int id)
         {
-            return Ado_Usuario.TraerUsuario(nombreUsuario);
+            return Ado_Usuario.TraerUsuario(id);
         }
         
         [HttpDelete]
