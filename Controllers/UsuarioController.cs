@@ -15,13 +15,13 @@ namespace HOLACODERCLASE14APIS.Controllers
         {
             return Ado_Usuario.TraerListaUsuarios();
         }
-        
+
         [HttpGet("GetUsuarios")]
         public Usuario Traer(int id)
         {
             return Ado_Usuario.TraerUsuario(id);
         }
-        
+
         [HttpDelete]
         public void Eliminar([FromBody] int id)
         {
@@ -36,20 +36,9 @@ namespace HOLACODERCLASE14APIS.Controllers
 
         }
         [HttpPost]
-        public void Crear([FromBody] Usuario usu) // PROBANDO EXCEPCIONES
+        public void Crear([FromBody] Usuario usu) 
         {
-            try
-            {
-                Ado_Usuario.TraerUsuario(usu.Id);
-                if (usu.Id != 0)
-                {
-                    Ado_Usuario.CrearUsuario(usu);
-                }
-            }
-            catch(Exception ex)
-            {
-                Console.WriteLine(ex);
-            }
+            Ado_Usuario.CrearUsuario(usu);
         }
 
 
