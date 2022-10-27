@@ -36,10 +36,20 @@ namespace HOLACODERCLASE14APIS.Controllers
 
         }
         [HttpPost]
-        public void Crear([FromBody] Usuario usu)
+        public void Crear([FromBody] Usuario usu) // PROBANDO EXCEPCIONES
         {
-            Ado_Usuario.CrearUsuario(usu);
-
+            try
+            {
+                Ado_Usuario.TraerUsuario(usu.Id);
+                if (usu.Id != 0)
+                {
+                    Ado_Usuario.CrearUsuario(usu);
+                }
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
         }
 
 

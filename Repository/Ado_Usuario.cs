@@ -18,11 +18,6 @@ namespace HOLACODERCLASE14APIS.Repository
                 SqlCommand cmd = conecction.CreateCommand();
                 cmd.CommandText = "SELECT * FROM usuario ";
 
-                /*var paramNombre = new SqlParameter("nombre", System.Data.SqlDbType.VarChar);
-                paramNombre.Value = nombreUsuario;
-
-                cmd.Parameters.Add(paramNombre);*/
-
                 var reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {

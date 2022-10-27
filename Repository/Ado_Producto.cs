@@ -120,13 +120,12 @@ namespace HOLACODERCLASE14APIS.Repository
         }
         public static void DeleteProducto(int idProd)
         {
-           
             using (SqlConnection conecction = new SqlConnection(Connection.connectionString()))
             {
                 conecction.Open();
-
                 SqlCommand cmd = conecction.CreateCommand();
-                cmd.CommandText = "DELETE FROM Producto WHERE id = @idProd";
+                cmd.CommandText = "DELETE FROM ProductoVendido WHERE idProducto = @idProd ;\n DELETE FROM Producto WHERE id = @idProd";
+
 
                 var paramIdProd = new SqlParameter("idProd", System.Data.SqlDbType.BigInt);
                 paramIdProd.Value = idProd;

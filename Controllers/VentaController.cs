@@ -10,9 +10,9 @@ namespace HOLACODERCLASE14APIS.Controllers
     public class VentaController : ControllerBase
     {
         [HttpPost]
-        public void Crear([FromBody] Venta vent)
+        public void Crear([FromBody] CrearVenta venta)
         {
-            Ado_Venta.CargarVenta(vent);
+            Ado_Venta.CargarVenta(venta);
 
         }
 

@@ -1,6 +1,7 @@
 ﻿using HOLACODERCLASE14APIS.Models;
 using HOLACODERCLASE14APIS.Repository;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.SignalR.Protocol;
 using System.Data.SqlClient;
 
 namespace HOLACODERCLASE14APIS.Controllers
@@ -12,7 +13,7 @@ namespace HOLACODERCLASE14APIS.Controllers
         [HttpPost]
         public void Crear([FromBody] Producto prod)
         {
-            Ado_Producto.CrearProducto(prod);
+                Ado_Producto.CrearProducto(prod);
 
         }
         [HttpPut]
